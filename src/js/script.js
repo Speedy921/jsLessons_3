@@ -40,12 +40,20 @@ window.addEventListener('DOMContentLoaded', ()=>{
     const deadline = '2023-10-04T00:00:00';
 
     function getTimeRemaining(endtime) {
-        const t = Date.parse(endtime) - Date.parse(new Date()),
+        let days, hours, minutes, seconds;
+        const t = Date.parse(endtime) - Date.parse(new Date());
+
+        if(t <=0){
+            days = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        } else {
             days = Math.floor( (t/(1000*60*60*24)) ),
             seconds = Math.floor( (t/1000) % 60 ),
             minutes = Math.floor( (t/1000/60) % 60 ),
             hours = Math.floor( (t/(1000*60*60) % 24) );
-
+        }
         return {
             'total': t,
             'days': days,
