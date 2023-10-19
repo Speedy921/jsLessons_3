@@ -108,4 +108,4 @@ function Calc() {
 
 }
 
-module.exports = calc.js;
+export default Calc;

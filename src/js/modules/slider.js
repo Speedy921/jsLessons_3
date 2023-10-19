@@ -151,4 +151,4 @@ function slider() {
     });
 }
 
-module.exports = slider.js;
+export default slider;
